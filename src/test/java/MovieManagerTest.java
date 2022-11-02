@@ -38,7 +38,7 @@ public class MovieManagerTest {
 
     @Test
     public void shouldFindLastMovieMax() {
-        MovieManager movie = new MovieManager();
+        MovieManager movie = new MovieManager(16);
 
         movie.addMovie("Movie1");
         movie.addMovie("Movie2");
