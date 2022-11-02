@@ -29,8 +29,10 @@ public class MovieManagerTest {
         movie.addMovie("Movie2");
         movie.addMovie("Movie3");
 
-        String[] expected = {"Movie1", "Movie2", "Movie3"};
+        String[] expected = {"Movie3", "Movie2", "Movie1"};
         String[] actual = movie.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
 
     }
 
@@ -55,8 +57,9 @@ public class MovieManagerTest {
         movie.addMovie("Movie15");
         movie.addMovie("Movie16");
 
-        String[] expected = {"Movie1", "Movie2", "Movie3", "Movie4", "Movie5", "Movie6", "Movie7", "Movie8", "Movie9", "Movie10", "Movie11", "Movie12", "Movie13", "Movie14", "Movie15", "Movie16"};
+        String[] expected = {"Movie16", "Movie15", "Movie14", "Movie13", "Movie12", "Movie11", "Movie10", "Movie9", "Movie8", "Movie7", "Movie6", "Movie5", "Movie4", "Movie3", "Movie2", "Movie1"};
         String[] actual = movie.findLast();
+        Assertions.assertArrayEquals(expected, actual);
     }
 }
 
