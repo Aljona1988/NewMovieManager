@@ -37,9 +37,29 @@ public class MovieManagerTest {
     }
 
     @Test
+    public void shouldFindLastMovieEqual() {
+        MovieManager movie = new MovieManager();
+
+        movie.addMovie("Movie1");
+        movie.addMovie("Movie2");
+        movie.addMovie("Movie3");
+        movie.addMovie("Movie4");
+        movie.addMovie("Movie5");
+        movie.addMovie("Movie6");
+        movie.addMovie("Movie7");
+        movie.addMovie("Movie8");
+        movie.addMovie("Movie9");
+        movie.addMovie("Movie10");
+
+
+        String[] expected = {"Movie10", "Movie9", "Movie8", "Movie7", "Movie6", "Movie5", "Movie4", "Movie3", "Movie2", "Movie1"};
+        String[] actual = movie.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
     public void shouldFindLastMovieMax() {
         MovieManager movie = new MovieManager(16);
-
         movie.addMovie("Movie1");
         movie.addMovie("Movie2");
         movie.addMovie("Movie3");
@@ -59,6 +79,7 @@ public class MovieManagerTest {
 
         String[] expected = {"Movie16", "Movie15", "Movie14", "Movie13", "Movie12", "Movie11", "Movie10", "Movie9", "Movie8", "Movie7", "Movie6", "Movie5", "Movie4", "Movie3", "Movie2", "Movie1"};
         String[] actual = movie.findLast();
+
         Assertions.assertArrayEquals(expected, actual);
     }
 }
